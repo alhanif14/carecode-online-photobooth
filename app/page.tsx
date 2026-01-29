@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Intro from "./components/Intro"
+import Camera from "./components/Camera"
 
 export default function Home() {
   const [step, setStep] = useState<"intro" | "camera">("intro")
@@ -12,9 +13,7 @@ export default function Home() {
         <Intro onStart={() => setStep("camera")} />
       )}
 
-      {step === "camera" && (
-        <p className="text-xl">Camera screen (coming soon)</p>
-      )}
+      {step === "camera" && <Camera />}
     </main>
   )
 }
